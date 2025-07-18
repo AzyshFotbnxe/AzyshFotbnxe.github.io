@@ -405,6 +405,9 @@ $(function(){
     slide: (_, ui) => {
       target = ui.value;
       other = total - target;
+      $('#simpleDistributionSlider').slider('value', target);
+      const $targetHandle = $('#simpleDistributionSlider .ui-slider-handle');
+      $('#targetLabel').css('left', $targetHandle.position().left + $targetHandle.width() / 2);
       refreshSimpleUI();
     }
   });
